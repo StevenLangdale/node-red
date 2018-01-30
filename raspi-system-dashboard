@@ -101,8 +101,9 @@
         "name": "",
         "group": "1bc90564.9f5c6b",
         "order": 2,
-        "width": 0,
-        "height": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
         "label": "Reboot",
         "color": "",
         "bgcolor": "",
@@ -143,8 +144,9 @@
         "name": "",
         "group": "1bc90564.9f5c6b",
         "order": 3,
-        "width": 0,
-        "height": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
         "label": "Shutdown",
         "color": "",
         "bgcolor": "red",
@@ -169,6 +171,7 @@
         "append": "",
         "useSpawn": "",
         "timer": "",
+        "oldrc": false,
         "name": "Shutdown",
         "x": 440,
         "y": 820,
@@ -301,7 +304,7 @@
         "label": "MB",
         "format": "{{value}}",
         "min": 0,
-        "max": "434",
+        "max": "859",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -565,6 +568,50 @@
         "wires": []
     },
     {
+        "id": "d39a4d85.c0d9c",
+        "type": "ui_button",
+        "z": "e73c0aea.cf3a78",
+        "name": "",
+        "group": "1bc90564.9f5c6b",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Restart HA",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 148,
+        "y": 877,
+        "wires": [
+            [
+                "c67a4d81.e8299"
+            ]
+        ]
+    },
+    {
+        "id": "c67a4d81.e8299",
+        "type": "exec",
+        "z": "e73c0aea.cf3a78",
+        "command": "sudo systemctl restart home-assistant.service",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "Restart HA",
+        "x": 450,
+        "y": 884.5,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
         "id": "7bc89e60.d6d3c",
         "type": "ui_group",
         "z": "",
@@ -582,7 +629,7 @@
         "tab": "31c33a46.e94e86",
         "order": 5,
         "disp": true,
-        "width": "6"
+        "width": "3"
     },
     {
         "id": "4af3ed09.25d134",
