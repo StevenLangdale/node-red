@@ -1,17 +1,17 @@
 [
     {
-        "id": "5e71249c.a1510c",
+        "id": "e73c0aea.cf3a78",
         "type": "tab",
         "label": "System Dashboard",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "5067522.2f9a2ac",
+        "id": "253ff97f.a70ea6",
         "type": "ui_gauge",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "12cd936d.628c3d",
+        "group": "7bc89e60.d6d3c",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -33,9 +33,9 @@
         "wires": []
     },
     {
-        "id": "c7615e78.7568d",
+        "id": "eec27406.0642a8",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "vcgencmd measure_temp",
         "addpay": false,
         "append": "",
@@ -46,16 +46,16 @@
         "y": 120,
         "wires": [
             [
-                "f47d2d00.ece5b"
+                "f596f8d4.d7ae88"
             ],
             [],
             []
         ]
     },
     {
-        "id": "40b7e701.19a278",
+        "id": "8b219636.e46438",
         "type": "inject",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "Every 20 seconds",
         "topic": "",
         "payload": "",
@@ -67,19 +67,20 @@
         "y": 260,
         "wires": [
             [
-                "c7615e78.7568d",
-                "f6f6b64a.d5e508",
-                "6aea4999.9f9198",
-                "e3f860f6.6fb19",
-                "f1315a1a.bdb668",
-                "50bbd979.381408"
+                "eec27406.0642a8",
+                "d872284e.5473d8",
+                "716bd73f.c52168",
+                "3c1ca4bc.19f4ec",
+                "974a29ce.5296c8",
+                "2b3f5d3d.f9c112",
+                "c73e8886.7d6588"
             ]
         ]
     },
     {
-        "id": "f47d2d00.ece5b",
+        "id": "f596f8d4.d7ae88",
         "type": "function",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
         "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
         "outputs": 1,
@@ -88,17 +89,17 @@
         "y": 120,
         "wires": [
             [
-                "5067522.2f9a2ac",
-                "9e810007.375da"
+                "253ff97f.a70ea6",
+                "c80064ed.238e48"
             ]
         ]
     },
     {
-        "id": "f2b20f7a.f5b5a",
+        "id": "5c07cc1b.f49864",
         "type": "ui_button",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "658e8fe0.da9b5",
+        "group": "1bc90564.9f5c6b",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -113,14 +114,14 @@
         "y": 760,
         "wires": [
             [
-                "d556c6ab.13eed8"
+                "3114b3c.f88564c"
             ]
         ]
     },
     {
-        "id": "d556c6ab.13eed8",
+        "id": "3114b3c.f88564c",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "sudo reboot",
         "addpay": false,
         "append": "",
@@ -136,11 +137,11 @@
         ]
     },
     {
-        "id": "3a82a6aa.fe8e2a",
+        "id": "686393d.b1a3a6c",
         "type": "ui_button",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "658e8fe0.da9b5",
+        "group": "1bc90564.9f5c6b",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -155,14 +156,14 @@
         "y": 820,
         "wires": [
             [
-                "ce925cca.ac4e3"
+                "d432a45a.b0c958"
             ]
         ]
     },
     {
-        "id": "ce925cca.ac4e3",
+        "id": "d432a45a.b0c958",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "sudo shutdown -h now",
         "addpay": false,
         "append": "",
@@ -178,11 +179,11 @@
         ]
     },
     {
-        "id": "9e810007.375da",
+        "id": "c80064ed.238e48",
         "type": "ui_chart",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "12cd936d.628c3d",
+        "group": "7bc89e60.d6d3c",
         "order": 3,
         "width": "6",
         "height": "5",
@@ -220,9 +221,9 @@
         ]
     },
     {
-        "id": "f6f6b64a.d5e508",
+        "id": "d872284e.5473d8",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'",
         "addpay": false,
         "append": "",
@@ -233,16 +234,16 @@
         "y": 200,
         "wires": [
             [
-                "185b64ba.ccd2eb"
+                "6c99eaa2.baed14"
             ],
             [],
             []
         ]
     },
     {
-        "id": "6aea4999.9f9198",
+        "id": "716bd73f.c52168",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "free -m| grep Mem | awk '{print $3}'",
         "addpay": false,
         "append": "",
@@ -254,18 +255,18 @@
         "y": 260,
         "wires": [
             [
-                "c72a803a.ff995"
+                "81e5a314.79a02"
             ],
             [],
             []
         ]
     },
     {
-        "id": "185b64ba.ccd2eb",
+        "id": "6c99eaa2.baed14",
         "type": "ui_gauge",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "12cd936d.628c3d",
+        "group": "7bc89e60.d6d3c",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -287,11 +288,11 @@
         "wires": []
     },
     {
-        "id": "c72a803a.ff995",
+        "id": "81e5a314.79a02",
         "type": "ui_gauge",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "3c2d17cd.08ba88",
+        "group": "4af3ed09.25d134",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -313,9 +314,9 @@
         "wires": []
     },
     {
-        "id": "6c2dd25.da02e2c",
+        "id": "ccf2ae97.88ac8",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "df -h",
         "addpay": false,
         "append": "",
@@ -326,18 +327,18 @@
         "y": 600,
         "wires": [
             [
-                "7f55fa63.0933b4"
+                "9d875acd.4f1238"
             ],
             [],
             []
         ]
     },
     {
-        "id": "3bbfe3e9.79db0c",
+        "id": "91c7b1bb.cb54e",
         "type": "ui_gauge",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "1072d95.ff12727",
+        "group": "f327f981.2a3a08",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -359,9 +360,9 @@
         "wires": []
     },
     {
-        "id": "7f55fa63.0933b4",
+        "id": "9d875acd.4f1238",
         "type": "function",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
         "func": "var re = /([0-9]{2})%/\nvar idx = msg.payload.search(re);\nvar str = msg.payload;\nif (idx >=0) {\n    str = msg.payload.substring(idx, idx + 2);\n}\nmsg.payload = str;\nreturn msg;",
         "outputs": 1,
@@ -370,14 +371,14 @@
         "y": 600,
         "wires": [
             [
-                "3bbfe3e9.79db0c"
+                "91c7b1bb.cb54e"
             ]
         ]
     },
     {
-        "id": "9d617557.9e0c08",
+        "id": "ab3c1342.1b492",
         "type": "inject",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "Every 10 Mins",
         "topic": "",
         "payload": "",
@@ -389,26 +390,26 @@
         "y": 600,
         "wires": [
             [
-                "6c2dd25.da02e2c"
+                "ccf2ae97.88ac8"
             ]
         ]
     },
     {
-        "id": "e0775a8c.03fac8",
+        "id": "bf637375.821b4",
         "type": "debug",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
         "active": true,
         "console": "false",
         "complete": "true",
-        "x": 990,
-        "y": 340,
+        "x": 1130,
+        "y": 380,
         "wires": []
     },
     {
-        "id": "e3f860f6.6fb19",
+        "id": "3c1ca4bc.19f4ec",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "systemctl status docker.service |grep \"Active:\"|awk '{print $2}'",
         "addpay": false,
         "append": "",
@@ -417,20 +418,20 @@
         "oldrc": false,
         "name": "Docker Status",
         "x": 460,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
-                "800d836f.eae64"
+                "bf2d6a7f.cd7438"
             ],
             [],
             []
         ]
     },
     {
-        "id": "800d836f.eae64",
+        "id": "bf2d6a7f.cd7438",
         "type": "ui_text",
-        "z": "5e71249c.a1510c",
-        "group": "a1d41e31.6e7a3",
+        "z": "e73c0aea.cf3a78",
+        "group": "d01ff670.feb6c8",
         "order": 2,
         "width": "3",
         "height": "1",
@@ -443,9 +444,9 @@
         "wires": []
     },
     {
-        "id": "f1315a1a.bdb668",
+        "id": "974a29ce.5296c8",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "/usr/bin/uptime | awk '{print $(NF-2),$(NF-1),$NF}'",
         "addpay": false,
         "append": "",
@@ -454,20 +455,20 @@
         "oldrc": false,
         "name": "System Load",
         "x": 450,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
-                "66d2f9c4.b34bd8"
+                "21f5bf93.0320d"
             ],
             [],
             []
         ]
     },
     {
-        "id": "66d2f9c4.b34bd8",
+        "id": "21f5bf93.0320d",
         "type": "ui_text",
-        "z": "5e71249c.a1510c",
-        "group": "a1d41e31.6e7a3",
+        "z": "e73c0aea.cf3a78",
+        "group": "d01ff670.feb6c8",
         "order": 1,
         "width": "3",
         "height": "1",
@@ -480,9 +481,9 @@
         "wires": []
     },
     {
-        "id": "50bbd979.381408",
+        "id": "2b3f5d3d.f9c112",
         "type": "exec",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "command": "free -m | grep Swap | awk '{print $3}'",
         "addpay": false,
         "append": "",
@@ -494,18 +495,18 @@
         "y": 320,
         "wires": [
             [
-                "864d4726.46ed78"
+                "84ac6901.0f9318"
             ],
             [],
             []
         ]
     },
     {
-        "id": "864d4726.46ed78",
+        "id": "84ac6901.0f9318",
         "type": "ui_gauge",
-        "z": "5e71249c.a1510c",
+        "z": "e73c0aea.cf3a78",
         "name": "",
-        "group": "3c2d17cd.08ba88",
+        "group": "4af3ed09.25d134",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -527,57 +528,94 @@
         "wires": []
     },
     {
-        "id": "12cd936d.628c3d",
+        "id": "c73e8886.7d6588",
+        "type": "exec",
+        "z": "e73c0aea.cf3a78",
+        "command": "systemctl status home-assistant.service |grep \"Active:\"|awk '{print $2}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "10",
+        "oldrc": false,
+        "name": "HA Status",
+        "x": 439,
+        "y": 522.5,
+        "wires": [
+            [
+                "18138e4e.496452"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "18138e4e.496452",
+        "type": "ui_text",
+        "z": "e73c0aea.cf3a78",
+        "group": "d01ff670.feb6c8",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "name": "HA Status",
+        "label": "HA Status",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 780,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7bc89e60.d6d3c",
         "type": "ui_group",
         "z": "",
         "name": "Col1",
-        "tab": "4e4f6ae5.8227c4",
+        "tab": "31c33a46.e94e86",
         "order": 1,
         "disp": false,
         "width": "6"
     },
     {
-        "id": "658e8fe0.da9b5",
+        "id": "1bc90564.9f5c6b",
         "type": "ui_group",
         "z": "",
         "name": "Actions",
-        "tab": "4e4f6ae5.8227c4",
+        "tab": "31c33a46.e94e86",
         "order": 5,
         "disp": true,
         "width": "6"
     },
     {
-        "id": "3c2d17cd.08ba88",
+        "id": "4af3ed09.25d134",
         "type": "ui_group",
         "z": "",
         "name": "Col2",
-        "tab": "4e4f6ae5.8227c4",
+        "tab": "31c33a46.e94e86",
         "order": 2,
         "disp": false,
         "width": "6"
     },
     {
-        "id": "1072d95.ff12727",
+        "id": "f327f981.2a3a08",
         "type": "ui_group",
         "z": "",
         "name": "Col3",
-        "tab": "4e4f6ae5.8227c4",
+        "tab": "31c33a46.e94e86",
         "order": 3,
         "disp": false,
         "width": "6"
     },
     {
-        "id": "a1d41e31.6e7a3",
+        "id": "d01ff670.feb6c8",
         "type": "ui_group",
         "z": "",
         "name": "Service Status",
-        "tab": "4e4f6ae5.8227c4",
+        "tab": "31c33a46.e94e86",
         "order": 4,
         "disp": true,
         "width": "3"
     },
     {
-        "id": "4e4f6ae5.8227c4",
+        "id": "31c33a46.e94e86",
         "type": "ui_tab",
         "z": "",
         "name": "RasPI0 System Control",
